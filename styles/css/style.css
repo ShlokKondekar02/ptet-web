@@ -5,6 +5,7 @@ body {
     background: white;
     color: #1a1a1a;
     overflow-x: hidden;
+    padding-top: 64px;
 }
 
 button {
