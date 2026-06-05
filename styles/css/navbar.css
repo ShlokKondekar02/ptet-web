@@ -60,7 +60,7 @@
     font-size:16.5px;
     position:relative;
     transition:all 0.25s ease;
-    font-family:'Segoe UI', 'Poppins', sans-serif;
+    font-family: 'Titillium Web', sans-serif;
 }
 
 #navbar li a::after{
