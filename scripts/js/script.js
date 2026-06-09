@@ -113,7 +113,7 @@ document.addEventListener("click", function(e){
     const section = document.getElementById(sectionId);
 
     if(section){
-        // ✅ Only override normal click if section exists on current page
+        // ✅ Only override normal click if section exists
         e.preventDefault();
         section.scrollIntoView({
             behavior: "smooth"
