@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="styles/css/navbar.css">
     <link rel="stylesheet" href="styles/css/footer.css">
     <link rel="stylesheet" href="styles/css/auth-popup.css">
+    <link rel="stylesheet" href="styles/css/book-modal.css">
     <link rel="preload" href="components/navbar.html" as="fetch" crossorigin="anonymous">
 
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
@@ -41,7 +42,7 @@
                     </ul>
 
                     <div class="hero-actions">
-                        <button id="address">Check Test Availability</button>
+                        <button id="address" onclick="document.getElementById('pte-section').scrollIntoView({behavior: 'smooth'})">Check Test Availability</button>
                     </div>
                 </div>
             </div>
@@ -175,21 +176,21 @@
                     <img src="assets/images/Australia_university_800px_x_451px__1_.jpg" alt="">
                     <h3>PTE Academic</h3>
                     <p>For global university study and visa applications to Australia and New Zealand.</p>
-                    <button id="address1">Book Now</button>
+                    <button class="book-now-btn book-modal-trigger" onclick="openBookModal()">Book Now</button>
                 </div>
 
                 <div class="cards">
                     <img src="assets/images/London-_UK-800_x_451px__1_.jpg" alt="">
                     <h3>PTE Core</h3>
                     <p>A general English test recognized by the Canadian government for immigration.</p>
-                    <button id="address1">Book Now</button>
+                    <button class="book-now-btn book-modal-trigger" onclick="openBookModal()">Book Now</button>
                 </div>
 
                 <div class="cards">
                     <img src="assets/images/AdobeStock_171916302-Canada__1_.jpg" alt="">
                     <h3>UK Visa Tests</h3>
                     <p>English tests for UK visa applications including PTE Home and PTE Academic UKVI.</p>
-                    <button id="address1">Book Now</button>
+                    <button class="book-now-btn book-modal-trigger" onclick="openBookModal()">Book Now</button>
                 </div>
 
             </div>
@@ -264,7 +265,7 @@
 
             </div>
 
-            <button id="address1">Next Review</button>
+            <button id="next-review-btn">Next Review</button>
 
         </section>
 
@@ -330,5 +331,100 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <!-- Book Now Modal -->
+    <div id="book-modal-overlay" class="book-modal-overlay">
+        <div class="book-modal">
+
+            <!-- Header -->
+            <div class="book-modal-header">
+                <button class="book-modal-close" onclick="closeBookModal()" title="Close">&times;</button>
+                <div class="book-modal-badge">
+                    <i class="fas fa-star"></i> Official PTE Registration
+                </div>
+                <h2>Book Your PTE Test</h2>
+                <p>Fill in your details — we'll confirm your slot within 24 hrs.</p>
+            </div>
+
+            <!-- Form Body -->
+            <div class="book-modal-body">
+                <form class="book-modal-form" id="bookNowForm">
+
+                    <!-- Full Name -->
+                    <div class="form-field">
+                        <label>Full Name</label>
+                        <div class="input-icon-wrap">
+                            <i class="fas fa-user"></i>
+                            <input type="text" placeholder="e.g. Rahul Sharma" required>
+                        </div>
+                    </div>
+
+                    <!-- Email + Phone -->
+                    <div class="form-row">
+                        <div class="form-field">
+                            <label>Email</label>
+                            <div class="input-icon-wrap">
+                                <i class="fas fa-envelope"></i>
+                                <input type="email" placeholder="you@email.com" required>
+                            </div>
+                        </div>
+                        <div class="form-field">
+                            <label>Phone</label>
+                            <div class="input-icon-wrap">
+                                <i class="fas fa-phone"></i>
+                                <input type="tel" placeholder="+91 99999 00000">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Test Type -->
+                    <div class="form-field">
+                        <label>Test Type</label>
+                        <div class="input-icon-wrap">
+                            <i class="fas fa-graduation-cap"></i>
+                            <select required>
+                                <option value="">— Select your test —</option>
+                                <option>PTE Academic</option>
+                                <option>PTE Core</option>
+                                <option>PTE Home (UK Visa)</option>
+                                <option>PTE Academic UKVI</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Preferred Date -->
+                    <div class="form-field">
+                        <label>Preferred Test Date</label>
+                        <div class="input-icon-wrap">
+                            <i class="fas fa-calendar-alt"></i>
+                            <input type="date" required>
+                        </div>
+                    </div>
+
+                    <!-- Submit -->
+                    <button type="submit" class="book-submit-btn">
+                        <i class="fas fa-paper-plane"></i>
+                        Submit Application
+                    </button>
+
+                </form>
+
+                <!-- Footer note -->
+                <p class="book-modal-footer-note">
+                    <i class="fas fa-lock"></i>
+                    Your information is 100% secure and confidential.
+                </p>
+
+                <!-- Success message (shown after submit) -->
+                <div class="book-modal-success" id="bookModalSuccess">
+                    <div class="success-icon"><i class="fas fa-check"></i></div>
+                    <h3>Application Submitted!</h3>
+                    <p>Thank you! Our team will confirm your test slot within 24 hours via email.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="scripts/js/book-modal.js"></script>
 </body>
 </html>

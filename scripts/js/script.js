@@ -157,6 +157,18 @@ document.addEventListener("click", function(e){
         section.scrollIntoView({
             behavior: "smooth"
         });
+    } else {
+        window.location.href = "/#" + sectionId;
     }
 
+});
+
+document.addEventListener("DOMContentLoaded", () => {
+    const nextReviewBtn = document.getElementById("next-review-btn");
+    const reviewsContainer = document.getElementById("reviews");
+    if(nextReviewBtn && reviewsContainer) {
+        nextReviewBtn.addEventListener("click", () => {
+            reviewsContainer.scrollBy({ left: 300, behavior: "smooth" });
+        });
+    }
 });

@@ -251,6 +251,7 @@ section.reveal:nth-of-type(odd){
     background:linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
     opacity:0;
     transition:0.4s;
+    pointer-events: none;
 }
 
 #container .cards:hover::after{
@@ -262,7 +263,7 @@ section.reveal:nth-of-type(odd){
     background:#ffffff;
 
     border-radius:12px;
-    overflow:hidden;
+    overflow:visible;
     position:relative;
 
     box-shadow:0 10px 25px rgba(0,0,0,0.08);
@@ -273,18 +274,7 @@ section.reveal:nth-of-type(odd){
     padding-bottom:25px;
 }
 
-#container .cards::after{
-    content:"";
-    position:absolute;
-    inset:0;
-    background:linear-gradient(120deg, transparent, rgba(255,255,255,0.3), transparent);
-    opacity:0;
-    transition:0.4s;
-}
 
-#container .cards:hover::after{
-    opacity:1;
-}
 
 #address, #address1{
     letter-spacing:0.5px;
@@ -325,6 +315,34 @@ section.reveal:nth-of-type(odd){
 
 #container .cards button{
     margin-top:15px;
+}
+
+/* Book Now Button */
+.book-now-btn {
+    display: inline-block;
+    background: #8d2123;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 11px 28px;
+    font-size: 14px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    position: relative;
+    z-index: 10;
+    transition: background 0.25s ease, transform 0.2s ease, box-shadow 0.25s ease;
+    box-shadow: 0 4px 14px rgba(141, 33, 35, 0.3);
+}
+
+.book-now-btn:hover {
+    background: #6a181b;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(141, 33, 35, 0.45);
+}
+
+.book-now-btn:active {
+    transform: translateY(0);
 }
 /* Reviews Section */
 #contact {
